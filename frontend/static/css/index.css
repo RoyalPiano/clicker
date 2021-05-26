@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+#counter {
+    color: red;
+    font-weight: 600;
+}
+
+.money {
+    height: 50px;
+    width: 50px;
+}
+
+.click-container {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3vh 0; 
+    top: 500px;
+    background-image: url('');
+}
+
+.inner {
+    visibility: hidden;
+    position: absolute;
+    width: 1000px;
+    max-height: 300px;
+    max-width: 500px;
+    bottom: 220px;
+  }
+
+.click-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: fit-content;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    position: relative;
+    bottom: 100px;
+}
+
+.click-holder img {
+    height: 60%;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    /* user-drag: none; */ 
+}
+
+.boost-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding-bottom: 100px;
+}
+
+.boost-holder {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.boost {
+    width: 190px;
+    height: 150px;
+    background: rgb(1, 122, 106);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}

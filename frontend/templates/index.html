@@ -1,0 +1,44 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLICKER MINE</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <script src="{% static 'js/index.js' %}"></script>
+</head>
+<body>
+    <a href="{% url 'logout' %}">logout</a>
+    <div style="max-height: 700px;" class="flex-center">
+        <h1 id="title">Симулятор майнера</h1>
+        <div style="max-height: 600px;" class="click-container">
+            <img class="money" src="{% static 'imgs/bitcoin.png' %}" alt=""> 
+            <p id="counter">{{main_cycle.coins_count}}</p>           
+            <button class="click-holder" onclick="call_click()">
+                <img id="click-image" src="{% static 'imgs/nvidia.png' %}" alt="">   
+                <img id="outOfStock" class="inner" src="{% static 'imgs/outOfStock.png' %}" alt="">                          
+            </button>      
+            <img hidden id="bitcoin" src="{% static 'imgs/bitcoin.png' %}" alt="">   
+            <img hidden style="height: 400px; width: 500px; bottom: 300px;" id="fall" src="{% static 'imgs/fall.png' %}" alt="">  
+            <img hidden id="nvidia" src="{% static 'imgs/nvidia.png' %}" alt="">        
+            <span id="click_power">{{main_cycle.click_power}}</span>     
+        </div>
+        
+        </div>
+        <div class="boost-container">                
+            <h3>Ферма(нажмите для апгрейда фермы)</h3>
+            <div class="boost-holder" id="boost-holder">
+                {% for boost in boosts %}
+                    <button class="boost" id="boost_{{boost.id}}" onclick="update_boost({{boost.id}})">
+                        <p>Видеокарт: <span id="boost_level">{{boost.level}}</span></p>
+                        <p>Мощность фермы: +<span id="boost_power">{{boost.power}}</span></p>
+                        <p>Цена видеокарты: <span id="boost_price">{{boost.price}}</span></p>
+                    </button>
+                {% endfor %}
+            </div>
+        </div>
+    </div>    
+</body>
+</html>
